@@ -1,0 +1,310 @@
+/* Minimal Homepage Styles - Matching Reference Design */
+
+body.home-page {
+  background-color: #f5f1eb !important;
+  color: #2a2a2a;
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0 !important;
+  min-height: 100vh;
+}
+
+.home-wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Logo in top-left */
+.logo {
+  position: absolute;
+  top: 60px;
+  left: 80px;
+  z-index: 10;
+}
+
+.logo a {
+  font-size: 72px;
+  font-weight: 700;
+  color: #2a2a2a;
+  text-decoration: none;
+  line-height: 1;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.logo a:hover {
+  color: #267CB9;
+}
+
+/* Navigation in top-right - vertical */
+.top-nav {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  z-index: 10;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list a {
+  color: #2a2a2a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: #267CB9;
+}
+
+.nav-list a.active {
+  color: #2a2a2a;
+  font-weight: 600;
+}
+
+/* Main Content - Centered */
+.home-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 200px);
+  padding: 120px 40px 80px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Tagline (small uppercase text above main content) */
+.tagline {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #2a2a2a;
+  margin: 0 0 40px;
+  font-weight: 400;
+}
+
+/* Main Content Text */
+.main-content {
+  font-size: 42px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #2a2a2a;
+  margin: 0;
+}
+
+.main-content p {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.4;
+}
+
+/* Emphasized text (bold) */
+.main-content strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Projects Section - Minimal styling */
+.projects {
+  margin-top: 80px;
+  width: 100%;
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.project-item {
+  text-align: center;
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #2a2a2a;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover .project-title {
+  color: #267CB9;
+}
+
+/* Footer - Social Links */
+.home-footer {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #2a2a2a;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.social-links a:hover {
+  color: #267CB9;
+  opacity: 1;
+}
+
+.social-links svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .home-wrapper {
+    padding: 40px 40px;
+  }
+
+  .logo {
+    top: 40px;
+    left: 40px;
+  }
+
+  .logo a {
+    font-size: 56px;
+  }
+
+  .top-nav {
+    top: 40px;
+    right: 40px;
+  }
+
+  .home-main {
+    padding: 100px 20px 60px;
+  }
+
+  .main-content {
+    font-size: 32px;
+  }
+
+  .main-content p {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-wrapper {
+    padding: 30px 20px;
+  }
+
+  .logo {
+    top: 30px;
+    left: 20px;
+  }
+
+  .logo a {
+    font-size: 48px;
+  }
+
+  .top-nav {
+    top: 30px;
+    right: 20px;
+  }
+
+  .nav-list a {
+    font-size: 12px;
+  }
+
+  .home-main {
+    padding: 80px 20px 100px;
+    min-height: auto;
+  }
+
+  .tagline {
+    font-size: 10px;
+    margin-bottom: 30px;
+  }
+
+  .main-content {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .main-content p {
+    font-size: 28px;
+  }
+
+  .projects {
+    margin-top: 60px;
+  }
+
+  .home-footer {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 60px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo a {
+    font-size: 40px;
+  }
+
+  .main-content {
+    font-size: 24px;
+  }
+
+  .main-content p {
+    font-size: 24px;
+  }
+
+  .tagline {
+    font-size: 9px;
+  }
+
+  .project-title {
+    font-size: 16px;
+  }
+}
