@@ -31,14 +31,18 @@
       </nav>
 
       <!-- Main Content -->
-      <main class="home-main">
+      <main class="home-main{% if page.url == '/about' or page.url == '/about.html' or page.url == '/about/' %} about-with-image{% endif %}">
         {% if page.tagline %}
         <p class="tagline">{{ page.tagline }}</p>
         {% endif %}
 
+        {% if page.url == '/about' or page.url == '/about.html' or page.url == '/about/' %}
+          {{ content | markdownify }}
+        {% else %}
         <div class="main-content">
           {{ content | markdownify }}
         </div>
+        {% endif %}
 
         <!-- Featured Projects (optional, styled minimally) -->
         {% if page.projects %}
@@ -87,5 +91,8 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    {% if page.url == '/about' or page.url == '/about.html' or page.url == '/about/' %}
+    <script src="{{ "/assets/js/about-scroll.js" | relative_url }}"></script>
+    {% endif %}
   </body>
 </html>
