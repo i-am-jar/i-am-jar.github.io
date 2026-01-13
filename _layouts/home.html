@@ -13,7 +13,7 @@
     <![endif]-->
     {% include head-custom.html %}
   </head>
-  <body class="home-page">
+  <body class="home-page{% if page.url == '/about' or page.url == '/about.html' or page.url == '/about/' %} about-page{% endif %}">
     <div class="home-wrapper">
       <!-- Logo in top-left -->
       <div class="logo">
@@ -24,7 +24,6 @@
       <nav class="top-nav">
         <ul class="nav-list">
           <li><a href="{{ "/about" | relative_url }}" {% if page.url == '/about' or page.url == '/about.html' or page.url == '/about/' %}class="active"{% endif %}>ABOUT</a></li>
-          <li><a href="{{ "/work" | relative_url }}" {% if page.url == '/work' or page.url == '/work.html' or page.url == '/work/' %}class="active"{% endif %}>WORK</a></li>
           <li><a href="{{ "/ai" | relative_url }}" {% if page.url == '/ai' or page.url == '/ai.html' or page.url == '/ai/' %}class="active"{% endif %}>AI</a></li>
           <li><a href="mailto:{{ site.email | default: '#' }}" {% unless site.email %}onclick="return false;"{% endunless %}>CONTACT</a></li>
         </ul>
